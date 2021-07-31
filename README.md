@@ -1,5 +1,5 @@
 # PSO-ALS
-Reproduction of the paper *Particle swarm optimization with adaptive learning strategy*.
+Reproduction of the paper *Particle swarm optimization with adaptive learning strategy* (and *Clustering by fast search and find of density peaks*).
 
 
 
@@ -8,20 +8,36 @@ Reproduction of the paper *Particle swarm optimization with adaptive learning st
 This paper introduce a  particle swarm optimization with the following features:
 
 - multiswarm technique
-
 - adaptive learning strategy
-
 - maintain great diversity
-
 - without an explicit velocity
+
+
+
+## Density-based clustering 
+
+Cluster centers are characterized by
+
+1. a higher density than their neighbor
+2. a relatively large distance from point with higher densities
+
+### Data point property
+
+1. local density $ρ_i$
+2. minimum distance to any other point with higher density $δ_i$
+
+### Local density
+
+1. Cut-off kernel $ρ_i=∑_{(j∈I)}χ(d_ij-d_c ) $
+2. Gaussian kernel $ρ_i=∑_{j∈I-{i}} exp⁡(-(d_ij/d_c )^2$
+
+
 
 
 
 ## SubSwarm Technique
 
 Based on a cluster method published in *Science*. their algorithm divides the whole swarm into several subswarms. The best particles in subswarm behave differently from other particles.
-
-
 
 
 
